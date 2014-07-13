@@ -1,0 +1,2 @@
+module VistisHelper
+end

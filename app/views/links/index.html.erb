@@ -1,0 +1,22 @@
+<h1>Your Links</h1>
+<h3><a href="<%=new_link_path%>">Make a new Link</a></h3>
+
+<table>
+  <tr>
+    <th>Slug </th>
+    <th>Target Link </th>
+    <th>Created At</th>
+    <th>Actions</th>
+  </tr>
+
+  <% @links.each do |link| %>
+    <tr>
+      <td><a href="<%=link_path(link.id)%>"><%= link.slug %></a></td>
+      <td><%= link.target_url %></td>
+      <td><%= link.created_at %></td>
+      <td><a href="<%=edit_link_path(link.id)%>">Edit</a>
+        <%= link_to 'Destroy', link_path(link.id),
+            :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr> 
+  <% end %>
+</table>
